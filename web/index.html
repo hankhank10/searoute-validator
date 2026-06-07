@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sea Route Validator</title>
+
+  <!-- Leaflet CSS from CDN -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- Left: map -->
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+    <!-- Right: controls + results panel -->
+    <aside id="panel">
+
+      <h1>Sea Route Validator</h1>
+      <p class="instructions">
+        Click the map to place waypoints in order.<br />
+        <strong>2 points</strong> → validates a single leg.<br />
+        <strong>3+ points</strong> → validates a multi-leg route.
+      </p>
+
+      <div id="waypoint-list">
+        <span class="muted">No waypoints placed yet.</span>
+      </div>
+
+      <div id="button-row">
+        <button id="btn-validate">Validate</button>
+        <button id="btn-clear" class="secondary">Clear</button>
+      </div>
+
+      <div id="hint" class="hint hidden"></div>
+
+      <!-- Human-readable result summary -->
+      <div id="result-summary" class="hidden"></div>
+
+      <!-- Raw JSON -->
+      <details id="result-raw" class="hidden">
+        <summary>Raw JSON response</summary>
+        <pre id="result-json"></pre>
+      </details>
+
+    </aside>
+
+  </div>
+
+  <!-- Leaflet JS from CDN -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
