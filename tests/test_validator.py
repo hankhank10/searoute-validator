@@ -8,8 +8,8 @@ import math
 import pytest
 from fastapi.testclient import TestClient
 
-from app import geometry, validator
-from app.main import app
+from searoute_validator import geometry, validator
+from searoute_validator.main import app
 
 # Well-known points (lon, lat).
 ATLANTIC_A = (-30.0, 40.0)
@@ -43,7 +43,7 @@ def test_sample_leg_includes_endpoints():
 
 
 def test_sample_spacing_respects_sample_km():
-    from app import config
+    from searoute_validator import config
     pts, _ = geometry.sample_leg(ATLANTIC_A, ATLANTIC_B)
     for a, b in zip(pts, pts[1:]):
         step = geometry.geodesic_distance_km(a, b)
