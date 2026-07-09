@@ -139,3 +139,9 @@ def health():
 # so it doesn't shadow the API routes or /docs (SPEC §6).
 if WEB_DIR.exists():
     app.mount("/", StaticFiles(directory=str(WEB_DIR), html=True), name="web")
+
+
+def run() -> None:
+    """Entry point for the ``searoute-validator`` CLI command."""
+    import uvicorn
+    uvicorn.run("searoute_validator.main:app", host="0.0.0.0", port=8000)

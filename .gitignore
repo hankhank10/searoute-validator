@@ -8,3 +8,7 @@ venv/
 
 # OS
 .DS_Store
+
+# Build artifacts
+build/
+dist/

@@ -11,8 +11,8 @@ Validation uses exact Shapely vector geometry against vendored [Natural Earth 1:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e ".[dev]"        # runtime only: pip install -e .
-uvicorn app.main:app --reload
+pip install -e ".[dev]"        # runtime only: pip install -e ".[server]"
+uvicorn searoute_validator.main:app --reload
 ```
 
 | URL | What |
